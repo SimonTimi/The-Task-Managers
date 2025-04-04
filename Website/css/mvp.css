@@ -1,0 +1,405 @@
+/* MVP.css v1.14 - https://github.com/andybrewer/mvp */
+
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+    font-size: 1em;
+}
+
+
+body {
+    background: #333132;
+    color: #333132;
+    font-family: var(--font-family);
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+p {
+    color: white;
+    text-align: center;
+    justify-content: center;
+    padding-right: 50px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+/* Links */
+a {
+    color: #fe8f1c;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.8s ease, font-size 0.3s ease;
+    padding: 50px;
+}
+
+a:hover {
+    color: white;
+    font-size: 1.2em;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover .fa {
+    color: white;
+}
+
+a:active {
+    background-color: #fe8f1c;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+.fa {
+    color: #fe8f1c;
+}
+
+h1 {
+    color: #fe8f1c;
+    display: inline-flex;
+}
+
+#homeh1 {
+    background-color: #333132;
+}
+
+h2 {
+    color: #fe8f1c;
+    text-align: center;
+    padding-right: 75px;
+}
+
+
+#carousel-container {
+    position: relative;
+    max-width: 225px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 225px;
+    height: auto;
+    
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+.arrow:hover {
+    background-color: #333132;
+    text-emphasis-color: white;
+}
+
+.prev {
+    left: 0px;
+}
+
+.next {
+    right: 0px;
+}
+
+
+.fa{
+    border: none;
+    padding-right: 2px;
+}
+
+.fa:hover {
+    transition: color 0.3s, font-size 0.3s;
+}
+
+nav ul li a i{
+    color: #fe8f1c;
+    transition: color 0.8s ease, font-size 0.3s ease;
+    margin-right: 2px;
+}
+
+nav {
+    padding-top: 0px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 0.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.containertop h1 {
+    align-items: center;
+    justify-content: center;
+    max-height: 200px;
+}
+
+.checks {
+    align-items: center;
+    list-style-type: none;
+    text-decoration: underline;
+    color: white;
+    text-align: center;
+}
+
+p a {
+    margin: 0;
+    padding: 0;
+}
+
+.quote {
+    font-style: italic;
+}
+
+.homenav ul li {
+    margin-right: 2px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul {
+    background: var(--color-bg);
+    border: 1px solid var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow) var(--color-shadow);
+    display: none;
+    height: auto;
+    left: -2px;
+    padding: .5rem 1rem;
+    position: absolute;
+    top: 1.7rem;
+    white-space: nowrap;
+    width: auto;
+    z-index: 1;
+}
+
+.sidenav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: -1px;
+    background-color: #fe8f1c; 
+    border: 1px solid #000000; 
+    border-radius: 10px;
+}
+
+.sidenav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav ul li {
+    display: block;
+    position: relative;
+    text-align: left;
+}
+
+.sidenav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000; 
+    transition: background-color 0.3s ease;
+}
+
+.sidenav ul li a:hover {
+    font-size: larger;
+}
+
+.inner:hover {
+    background-color: #fe8f1c;
+}
+
+.sidenav ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #999;
+    border: 1px solid #000000; 
+}
+
+.productimages{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.productproductimages {
+    display: flex;
+justify-content: space-between;
+}
+
+footer {
+    background-color: #666666;
+    color: white;
+}
+
+footer a{
+    text-align: right;
+}
+
+footer p {
+    text-align: left;
+    float: left;
+    margin: 10px;
+}
+
+header {
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+hr {
+    background-color: #fe8f1c;
+    height: 2px;
+    margin: 4rem;
+    border: none;
+}
+
+/* Headers */
+article header,
+div header,
+main header {
+    padding-top: 0;
+}
+
+header {
+    text-align: center;
+}
+
+header nav img {
+    margin: 1rem 0;
+}
+
+ul li {
+    padding: 0.2rem 0;
+}
+
+
+input[type="submit"] {
+    border-radius: 5px;
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    padding: 1rem 2rem;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    filter: brightness(var(--hover-brightness));
+}
+
+input.submit {
+    color: white;
+    background-color: #fe8f1c;
+    border: none;
+}
+
+form {
+    margin: auto;
+    width: 50%;
+    border: 1px solid;
+    border-color: #fe8f1c;
+    border-radius: 25px;
+    display: block;
+    padding: 1.5em;
+    background-color: #666666;
+}
+
+#forbackground {
+    background-image: url('images/controllerblue.jpg');
+    background-image: cross-fade();
+}
+    
+form header {
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+}
+
+label {
+    color: #fe8f1c;
+}
+
+textarea {
+    display: block;
+    font-size: inherit;
+    max-width: var(--width-card-wide);
+}
+
+input[type="range"] {
+    padding: 0.4rem 0;
+}
+
+textarea {
+    border: 1px solid var(--color-bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 0.4rem 0.8rem;
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 1.6rem);
+}
+
+input[readonly],
+textarea[readonly] {
+    background-color: var(--color-bg-secondary);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 15px;
+    scrollbar-color: #fe8f1c;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fe8f1c;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d16c00;
+  }
