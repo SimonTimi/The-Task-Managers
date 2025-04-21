@@ -1,37 +1,51 @@
 <?php require_once '../templates/header.php';?>
+
 <title>Scuf Gaming | Login</title>
         <nav class="homenav">
             <ul>
                 <li><a href="home.php"><i class="fa fa-home"></i> Home</a></li>
                 <li><a href="productspage.php"><i class="fa fa-shopping-cart"></i>Products</a></li>
+                <li><a href="login.php"><i class="fa fa-log-icon"></i>Login</a></li>
                 <li><a href="register.php"><i class="fa fa-reg-icon"></i>Register </a></li>
         </ul>
         </nav>
 
-        <form method="POST" action="register.php">
+        <!-- LOGIN FORM -->
+        <form method="POST" action="login.php">
                 <label for="email">Input Email: </label>
                 <input type="text" name="email" id="email" required> <br>
                 <label for="password">Password</label>
-                <input type="text" name="password" id="password" required>
-                <input type="submit" name="submit" value="Login">
+                <input type="password" name="password" id="password" required>
+                <input type="submit" name="submit" value="Login"></form>
 
-<?php require "../data/config.php";
+                <!-- LOGOUT BUTTON -->
+               
 
-    if(isset($_POST["submit"])){
-        try {
-                $connection = new PDO($dsn, $username, $password, $options);
+<?php require_once "../data/config.php";
 
-                $email = $_POST["email"];
-                $password = $_POST["password"];
-                
+if(isset($_POST['submit'])){ // checking if the submit button is pressed
+    try {
+        $connection = new PDO($dsn, $username, $password, $options);
 
-                $sql = "SELECT * FROM users WHERE email = :email";
-                $statement = $connection->prepare($sql);
-                $statement->execute();
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-                echo "<script> alert('Login Successful. Redirected to Home Page.'); window.location.href = 'home.php'; </script>"; 
-            } catch (PDOException $error){
-                echo "<script> Console.log('error on login attempt); </script>";
-            }
-        }
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':email', $email);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+        
+
+        if($user && password_verify($password, $user['password'])){ // checking if values are set
+            $_SESSION['email'] = $email = $user['email'];
+            $_SESSION['Active'] = true;
+            header("location:home.php");
+            exit;
+        } 
+    } catch (PDOException $e){
+        
+    }
+}
+
 ?>

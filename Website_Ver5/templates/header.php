@@ -1,3 +1,10 @@
+<?php session_start(); 
+    if($_SESSION['Active'] = false){
+      header("location:login.php");
+      exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +15,12 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<h2> Status: <?php if(isset($_SESSION['email'])){
+    echo "Logged in as: " . $_SESSION['email'];
+} else {
+    echo "You are not logged in.";
+}
+?>
 
 <header class="homeheader" id="forbackground">
   <div class="containertop">

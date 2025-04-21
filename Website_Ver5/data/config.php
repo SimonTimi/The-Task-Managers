@@ -1,10 +1,12 @@
 <?php
 
 $host = "localhost";
-$username = "admin"; //cian user
+//$username = "admin"; //cian user
 //$username = "root"; //simon user
-$password = "oilydog123"; // cian password
+$username = "root"; // alexey user
+//$password = "oilydog123"; // cian password
 //$password = "H00d135!"; // simon password
+$password = ""; // alexey password
 $DBname = "gaming_store"; 
 $dsn = "mysql:host=$host;dbname=$DBname";
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
